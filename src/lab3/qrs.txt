@@ -1,0 +1,39 @@
+______________Select
+  // вывод звписей из empFull
+        emp.showEmpFull();
+
+        // вывод записей из empPart
+        emp.showEmpPart();
+
+
+__________________Insert_all
+
+// Запись всех сотрудников в java.empFull
+        for (int k = 0 ;k < emps.getFullEmp().size(); k++){
+            emp.add_empFull( emps.getFullEmp() ,k );
+        }
+
+        // Запись всех сотрудников в java.empPart
+        for (int k = 0 ;k < emps.getPartEmp().size(); k++){
+            emp.add_empPart( emps.getPartEmp() ,k );
+        }
+
+
+_________________Insert
+
+              //добавление записи в empFull
+          String empf_f_name =     "Vladimir";
+          String empf_l_name =     "Svij";
+          String empf_special =    "System administrator";
+          int empf_area =           5;
+          double empf_salary =      152.5;
+          emp.create_new_empFull(empf_f_name,empf_l_name,empf_special,empf_area,empf_salary);
+  
+             //добавление записи в empPart
+          String empp_f_name =     "Andrey";
+          String empp_l_name =     "Chuhin";
+          String empp_special =    "C++ programmist";
+          int empp_area =           5;
+          double empp_salary =      152.5;
+          int empp_month = 12;
+          emp.create_new_empPart(empp_f_name,empp_l_name,empp_special,empp_area,empp_salary,empp_month);
