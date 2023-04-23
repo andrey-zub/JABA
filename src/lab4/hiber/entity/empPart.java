@@ -1,26 +1,39 @@
 package lab4.hiber.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.Serializable;
 
+@Getter @Setter
 @Entity
-@Getter
-@Setter
-
+@Table(name = "\"empPart\"")
 public class empPart implements Serializable {
-@Id
-@GeneratedValue ( strategy = GenerationType.IDENTITY)
-private long id;
-private String f_name;
-private String l_name;
-private String special;
-private int area;
-private double salary;
-private String contract;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    @Column(name= "f_name")
+    private String f_name;
+
+    @Column(name= "l_name")
+    private String l_name;
+
+    @Column(name= "special")
+    private String special;
+
+    @Column(name= "area")
+    private int area;
+
+    @Column(name= "salary")
+    private double salary;
+
+    @Column(name= "contract")
+    private String contract;
+
+
+
 }

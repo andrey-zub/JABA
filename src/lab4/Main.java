@@ -7,8 +7,7 @@ public class Main {
     public static void main(String[] args){
 
 
-        hiber hib = new hiber(); // для запуска hibernate 
-
+        hiber hib = new hiber(); // для запуска hibernate
 
         EMP_FULL empf = new EMP_FULL();
         empf.showEmp();
