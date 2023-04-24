@@ -6,8 +6,8 @@ public class path {
 
 
     protected  String sepr = File.separator;
-
-    protected  String src = "src" + sepr + "lab1" + sepr +"res" + sepr ;
+    protected String local = "src" + sepr + "lab1" + sepr;
+    protected  String src = local + "res" + sepr ;
 
     protected String get_path(){   return this.src;  }
 
@@ -27,10 +27,7 @@ public class path {
     }
 
     public String get_data(){
-
-       String  str = "src" + sepr + "lab1";
-
-        return str + sepr + get_csv();
+        return  get_csv();
     }
 
 

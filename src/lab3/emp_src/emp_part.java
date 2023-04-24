@@ -2,8 +2,6 @@ package lab3.emp_src;
 
 import lab1.res.empPart;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class emp_part extends empPart {
@@ -29,9 +27,10 @@ public class emp_part extends empPart {
     }
 
     public int size(){
-        ROW = this.data.get(0);
-        return ROW.size();
+        System.out.println(this.data.size());
+        return this.data.size();
     }
+
 
 
 

@@ -23,9 +23,9 @@ public class bd {
             auth.put("password", this.pass);
 
             conn = DriverManager.getConnection( url,auth );
-            if(conn !=null){
-                System.out.println("*** SERVER: [ START ] ***\n");
-            }
+//            if(conn !=null){
+//                System.out.println("*** SERVER: [ START ] ***\n");
+//            }
 
 
         } catch (Exception e) {
@@ -38,11 +38,11 @@ public class bd {
     public void kill(){
 
         try {
+            if (data != null) data.close();
             if (conn != null) conn.close();
             if (db != null) db.close();
-            if (data != null) data.close();
             System.out.println("SESSION: {  CONNECTION [close] }\n ");
-            System.out.println("*** SERVER: [ STOP ] ***\n");
+//          System.out.println("*** SERVER: [ STOP ] ***\n");
         } catch (SQLException e) {
             this.err();
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class bd {
 
         try {
             this.conn.setAutoCommit(auto_comit);
-            System.out.println("SESSION: { AUTO_COMMIT "+ auto_comit +" }\n");
+//            System.out.println("SESSION: { AUTO_COMMIT "+ auto_comit +" }\n");
         } catch (SQLException e) {
             this.err();
             e.printStackTrace();

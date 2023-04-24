@@ -13,7 +13,7 @@ public class EMP extends bd {
 
             this.setAutoCommit(auto_commit);
             this.db = this.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            System.out.println("SESSION: {  CONNECTION [open] }\n");
+            System.out.println("SESSION: {  CONNECTION [open] }");
 
         } catch (Exception e) {
             this.err();
