@@ -1,7 +1,8 @@
 package lab4;
 
-import lab4.hiber.hiber;
-import lab4.hiber.model.EMP_PART;
+import lab4.hiber.*;
+import lab4.hiber.model.*;
+
 
 public class Main {
     public static void main(String[] args){
@@ -13,16 +14,16 @@ public class Main {
 //        empf.show();
 //        empf.kill();
 
-        EMP_PART empp = new EMP_PART();
-       // empp.show();
+//        EMP_PART empp = new EMP_PART();
+//        empp.show();
+//
+//        empp.kill();
 
-        empp.readData();
+        DEPARTMENT depr = new DEPARTMENT();
+//        depr.addEmpDep();     // добавление записей в таблице с кафедрами
 
-        empp.kill();
-
-//        DEPARTMENT depr = new DEPARTMENT();
-//        depr.show();
-//        depr.kill();
+        depr.show();
+        depr.kill();
 
 
 

@@ -27,7 +27,6 @@ public class emp_part extends empPart {
     }
 
     public int size(){
-        System.out.println(this.data.size());
         return this.data.size();
     }
 

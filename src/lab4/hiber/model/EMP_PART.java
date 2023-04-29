@@ -14,6 +14,8 @@ public class EMP_PART extends model {
 
     protected List<empPart> LIST;
 
+
+
     public EMP_PART() {
         sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
@@ -54,7 +56,7 @@ public class EMP_PART extends model {
 
     @Override
     public void run() {
-
+        this.readData();
     }
 
     public void dropData(){
@@ -68,26 +70,21 @@ public class EMP_PART extends model {
 
     public void readData(){
 
-        data emps = new data(); // чтение из CSV
-        emp_part emp_part = emps.getPartEmp();
         Transaction tx = null;
+        emp_part emps = new data().getPartEmp(); // чтение из CSV
 
-        System.out.println(emp_part.size());
-
-
-        for (int k = 0 ;k < emp_part.size(); k++){
-
+        for ( List<String> row : emps.getData()  ){
 
             empPart empp = new empPart();
-            try { tx = session.beginTransaction();
 
-                Long id = (long) Integer.parseInt(emp_part.getRow(0).get(k).toString());
-                String f_name = emp_part.getRow(1).get(k).toString();
-                String l_name = emp_part.getRow(2).get(k).toString();
-                String special = emp_part.getRow(3).get(k).toString();
-                int area = (int) Double.parseDouble(emp_part.getRow(4).get(k).toString());
-                double salary = Double.parseDouble(emp_part.getRow(5).get(k).toString());
-                String contract = emp_part.getRow(6).get(k).toString();
+            try { tx = session.beginTransaction();
+                Long id = (long) Integer.parseInt(row.get(0).toString());
+                String f_name = row.get(1).toString();
+                String l_name = row.get(2).toString();
+                String special = row.get(3).toString();
+                int area = (int) Double.parseDouble(row.get(4).toString());
+                double salary = Double.parseDouble(row.get(5).toString());
+                String contract = row.get(6).toString();
 
                 empp.setId(id);
                 empp.setF_name(f_name);
@@ -100,7 +97,9 @@ public class EMP_PART extends model {
                 tx.commit();
             } catch (HibernateException ex) {  if(tx != null) tx.rollback();   }
 
+
         }
+
 
 
     }

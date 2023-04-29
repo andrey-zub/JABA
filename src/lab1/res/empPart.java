@@ -15,8 +15,6 @@ public class empPart extends employee_abstract {
     public void init(List<List<String>> ll) {
 
 
-
-
         for (List<String> row : ll){
 
             int area = (int) (Math.random() * ( 10 - 1  )) ;
