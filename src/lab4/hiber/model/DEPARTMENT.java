@@ -38,11 +38,12 @@ public class DEPARTMENT extends model {
 
     public void show(){
         System.out.println(" ID | Department | Employee ID ");
+        System.out.println("____________________________________________");
         for (department dep : this.LIST){
-            System.out.println("____________________________________________");
             System.out.print( dep.getId());
             System.out.print(" | " + dep.getName());
-            System.out.print(" | " + dep.getEmpid());
+            System.out.println(" | " + dep.getEmpid());
+            System.out.println("____________________________________________");
         }
         System.out.println("///DONE\n");
     }

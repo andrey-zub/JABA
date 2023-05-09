@@ -1,8 +1,8 @@
 package lab4.hiber.model;
 
 import jakarta.persistence.Query;
-import lab3.emp_src.data;
-import lab3.emp_src.emp_part;
+import emp_logic.emp_src.data;
+import emp_logic.emp_src.emp_part;
 import lab4.hiber.HibernateUtil;
 import lab4.hiber.entity.empPart;
 import org.hibernate.HibernateException;
