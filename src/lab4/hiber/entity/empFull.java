@@ -32,4 +32,10 @@ public class empFull implements Serializable {
     private double salary;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private department department;
+
+
+
+
 }

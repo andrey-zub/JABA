@@ -1,7 +1,7 @@
 package lab4;
 
-import lab4.hiber.*;
-import lab4.hiber.model.*;
+import lab4.hiber.hiber;
+import lab4.hiber.model.DEPARTMENT;
 
 
 public class Main {
@@ -15,15 +15,30 @@ public class Main {
 //        empf.kill();
 
 //        EMP_PART empp = new EMP_PART();
+
+//        empp.dropData();
 //        empp.show();
-//
+
+//        System.out.println("----------emp_part_list------------");
+//        for (empPart el : empp.getempPartList()){
+//            System.out.print("id: "+ el.getId());
+//            System.out.print("\t fio: " + el.getF_name()  + el.getL_name() );
+//            System.out.print("\t special: " + el.getSpecial());
+//            System.out.print("\t area: "+ el.getArea());
+//            System.out.print("\t contract "+ el.getContract());
+//            System.out.println("--------------------------");
+//        }
+
 //        empp.kill();
 
         DEPARTMENT depr = new DEPARTMENT();
-//        depr.addEmpDep();     // добавление записей в таблице с кафедрами
-
+       depr.addEmpDep();     // добавление записей в таблице с кафедрами
         depr.show();
         depr.kill();
+
+
+
+
 
 
 

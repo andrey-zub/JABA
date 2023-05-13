@@ -6,11 +6,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter
 
 @Entity
-@Table(name = "\"department\"")
 public class department implements Serializable {
     @Id
     @Column(name = "id")
@@ -19,8 +20,14 @@ public class department implements Serializable {
     @Column(name="dep_name")
     private String name;
 
-    @Column(name = "emp_id")
-    private Long empid;
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    List<empFull> employee = new ArrayList<>();
 
+    public void setEmployee(List<empFull> employee) {
+        this.employee = employee;
 
+        for (empFull el : employee){
+            el.setDepartment(this);
+        }
+    }
 }

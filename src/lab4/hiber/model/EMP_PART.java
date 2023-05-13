@@ -1,8 +1,9 @@
 package lab4.hiber.model;
 
-import jakarta.persistence.Query;
+
 import emp_logic.emp_src.data;
 import emp_logic.emp_src.emp_part;
+import jakarta.persistence.Query;
 import lab4.hiber.HibernateUtil;
 import lab4.hiber.entity.empPart;
 import org.hibernate.HibernateException;
@@ -13,8 +14,6 @@ import java.util.List;
 public class EMP_PART extends model {
 
     protected List<empPart> LIST;
-
-
 
     public EMP_PART() {
         sessionFactory = HibernateUtil.getSessionFactory();
@@ -31,11 +30,13 @@ public class EMP_PART extends model {
         System.out.println("\\SESSION[ empPart ][ STOP ]\n");
     }
 
-    protected List<empPart> getempPartList(){
+
+
+
+    public List<empPart> getempPartList(){
         String hql = "From empPart";
         Query query = (Query) session.createQuery(hql);
         List<empPart> empPartList = query.getResultList();
-
         return empPartList;
     }
 

@@ -3,8 +3,6 @@ package lab4.hiber.model;
 import jakarta.persistence.Query;
 import lab4.hiber.HibernateUtil;
 import lab4.hiber.entity.department;
-import lab4.hiber.entity.empFull;
-import lab4.hiber.entity.empPart;
 import org.hibernate.HibernateException;
 import org.hibernate.Transaction;
 
@@ -29,7 +27,7 @@ public class DEPARTMENT extends model {
 
 
     protected List<department> getdepartmentList(){
-        String hql = "From department";
+        String hql = " from department ";
         Query query = (Query) session.createQuery(hql);
         List<department> departmentList = query.getResultList();
 
@@ -42,7 +40,7 @@ public class DEPARTMENT extends model {
         for (department dep : this.LIST){
             System.out.print( dep.getId());
             System.out.print(" | " + dep.getName());
-            System.out.println(" | " + dep.getEmpid());
+            System.out.println(" | " + dep.getEmployee());
             System.out.println("____________________________________________");
         }
         System.out.println("///DONE\n");
@@ -70,34 +68,24 @@ public class DEPARTMENT extends model {
 
     public void addEmpDep() {
         EMP_FULL empf = new EMP_FULL();
-        EMP_PART empp = new EMP_PART();
+        department dep = new department();
+        Transaction tx = null;
 
-               for (empFull emp : empf.getEmpFullList()){
-                   Transaction tx = null;
-                   department dep = new department();
-                   try { tx = session.beginTransaction();
+
+        try { tx = session.beginTransaction();
+
+
                        Long rand = (long) (Math.random() * (1000) + 1);
-                           dep.setName("dep" + emp.getArea()*10);
+                           dep.setName("dep" + empf.getEmpFullList().get(3).getArea()*10);
                            dep.setId(rand);
-                           dep.setEmpid(emp.getId());
+                           dep.setEmployee(empf.getEmpFullList());
                        session.save(dep);
                        tx.commit();
-                   } catch (HibernateException ex) {  if(tx != null) tx.rollback();   }
-               }
 
-        for (empPart emp : empp.getempPartList()){
-            Transaction tx = null;
-            department dep = new department();
-            try { tx = session.beginTransaction();
-                Long rand = (long) (Math.random() * (1000) + 1);
-                dep.setName("dep" + emp.getArea()*10);
-                dep.setId(rand);
-                dep.setEmpid(emp.getId());
-                session.save(dep);
-                tx.commit();
-            } catch (HibernateException ex) {  if(tx != null) tx.rollback();   }
-        }
 
+
+
+        } catch (HibernateException ex) {  if(tx != null) tx.rollback();   }
 
 
 

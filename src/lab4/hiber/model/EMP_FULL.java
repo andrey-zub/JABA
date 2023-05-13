@@ -27,6 +27,10 @@ public class EMP_FULL extends model {
         System.out.println("\\SESSION[ empFull ][ STOP ]\n");
     }
 
+
+
+
+
     protected List<empFull> getEmpFullList(){
        String hql = "From empFull";
        Query query = (Query) session.createQuery(hql);
