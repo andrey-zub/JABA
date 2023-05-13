@@ -22,9 +22,9 @@
 
 
 
-        <mapping class="lab4.hiber.entity.empFull"/>
-        <mapping class="lab4.hiber.entity.empPart"/>
-        <mapping class="lab4.hiber.entity.department"/>
+        <mapping class="LAB4.hiber.entity.empFull"/>
+        <mapping class="LAB4.hiber.entity.empPart"/>
+        <mapping class="LAB4.hiber.entity.department"/>
 
 
 
